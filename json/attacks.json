@@ -1,0 +1,11 @@
+{
+	"attack_id":1,
+	"attack_description":"",
+"attack_references":[],
+"default_likelihood":2,
+"default_impact":1,
+
+"linked_vulnerabilities":[],
+"Linked_node":[]
+
+}
