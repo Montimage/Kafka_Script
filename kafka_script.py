@@ -1,7 +1,9 @@
-from kafka import  KafkaConsumer,KafkaProducer
+from kafka import  KafkaConsumer,KafkaProducer,TopicPartition
 from kafka.admin import KafkaAdminClient,NewTopic
 import json
 import sys
+import time
+#import pdb; pdb.set_trace()
 
 #import pdb; pdb.set_trace()
 def read_json(namefile):
@@ -18,26 +20,16 @@ def read_json(namefile):
 
 # Check if any message exists in topic and update with new message
 def check_and_update_message(topic_name, consumer,producer,data):
+	
+	msg_id = 1
+	key = str(msg_id).encode('utf-8')
 
-	if consumer.poll(0):
-        # Messages exist, delete the first one and update with new message
-		for msg in consumer:
-			producer.send(topic_name, b'', partition=msg.partition, offset=msg.offset)
-			producer.flush()
-			producer.send(topic_name, value=data)
-		    	# Wait for the message to be sent and delivery report to be received
-			producer.flush()
-			# Close the KafkaProducer instance
-			producer.close()
-			break
-	else:
-		# No messages exist, simply send the new message to the topic
-		producer.send(topic_name, value=data)
-		# Wait for the message to be sent and delivery report to be received
-		producer.flush()
-		# Close the KafkaProducer instance
-		producer.close()
 
+	producer.flush()
+	producer.send(topic_name, value=data,key=key)
+	
+	producer.close()
+	
 def main():
 	if len(sys.argv) < 4:
 		# Prompt the user for input if arguments are not provided
