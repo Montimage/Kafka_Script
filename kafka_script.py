@@ -63,11 +63,12 @@ def main():
 
 
 	# Create a KafkaProducer instance
+	#The lambda function transforms the json onbect in string and the encode it for the serialization
 	producer = KafkaProducer(bootstrap_servers=bootstrap_servers,value_serializer=lambda v: json.dumps(v).encode('utf-8'))
 
 	data= read_json(namefile)
 	   
-	send_message(topic_name,consumer,producer,data)
+	send_message(topic_name,producer,data)
 
 	
 	

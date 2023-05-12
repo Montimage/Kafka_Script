@@ -6,89 +6,118 @@
 	    	{
 	    	"id":1,
 	    	"name":"AMF",
-	    	"service_description":"",
-		 "connections": [{"ip":"10.10.10.10","name":"AUSF"}]
+	    	"service_description":"AMF manages tasks like assigning and managing IP addresses, authenticating and authorizing devices to access the network, and selecting the best 5G core network node to handle the user's data traffic based on various aspects like location, network performance, and user policy.",
+		 "connections": [{"ip":"10.10.10.10","name":"AUSF"},{"ip":"","name":"NSSAAF"},{"ip":"","name":"NSSSF"},{"ip":"","name":"NEF"},{"ip":"","name":"SMF"},{"ip":"","name":"SCP"},{"ip":"","name":"NRF"},{"ip":"","name":"UDM"},{"ip":"","name":"AF"},{"ip":"","name":"PCF"}]
 
 	    
 	    	},
 	    	{
 	    	"id":2,
 	    	"name":"NSSF",
-	    	"service_description":"",
-		"connections": []
-	    
-	    	},
+	    	"service_description":"The 5G architecture's central network component known as NSSF, or Network Slice Selection Function, is in charge of choosing the best network slice for each unique service or application. A network slice is an end-to-end network that is logically isolated and independent and is designed to fulfill the unique requirements of each service or application.",
+		 "connections": [{"ip":"10.10.10.10","name":"AUSF"},{"ip":"","name":"NSSAAF"},{"ip":"","name":"AMF"},{"ip":"","name":"NEF"},{"ip":"","name":"SMF"},{"ip":"","name":"SCP"},{"ip":"","name":"NRF"},{"ip":"","name":"UDM"},{"ip":"","name":"AF"},{"ip":"","name":"PCF"}]
 
+	    	},
 	    	{
 	    	"id":3,
-	    	"name":"NRF",
-	    	    	"service_description":"",
-		 "connections": []
-	    
+	    	"name":"NEF",
+	    	"service_description":" NEF, or Network Exposure Function, enables approved third-party applications and services to access and utilize the network resources and services. It serves as a conduit between the 5G core network and other parties, including service providers, vertical sectors, and third-party application developers.",
+		 "connections": [{"ip":"10.10.10.10","name":"AUSF"},{"ip":"","name":"NSSAAF"},{"ip":"","name":"AMF"},{"ip":"","name":"NSSF"},{"ip":"","name":"SMF"},{"ip":"","name":"SCP"},{"ip":"","name":"NRF"},{"ip":"","name":"UDM"},{"ip":"","name":"AF"},{"ip":"","name":"PCF"}]
+
 	    	},
 	    	{
 	    	"id":4,
-	    	"name":"PCF",
-	    	"service_description":"",
-		"connections": []
+	    	"name":"NRF",
+	    	    	"service_description":" Network Repository Function offers a centralized database for collecting and distributing data regarding network functions and services. In the context of the 5G network, the NRF function serves as a directory service, enabling other network functions to register their capabilities and services as well as learn about the capabilities and services of other network functions.",
+		 "connections": [{"ip":"10.10.10.10","name":"AUSF"},{"ip":"","name":"NSSAAF"},{"ip":"","name":"NSSSF"},{"ip":"","name":"NEF"},{"ip":"","name":"SMF"},{"ip":"","name":"SCP"},{"ip":"","name":"AMF"},{"ip":"","name":"UDM"},{"ip":"","name":"AF"},{"ip":"","name":"PCF"}]
 	    
 	    	},
 	    	{
 	    	"id":5,
+	    	"name":"PCF",
+	    	"service_description":"The PCF is in charge of controlling and managing network policies, which govern how data is carried across the network. It is made to make sure that data traffic is managed to guarantee user-required security and quality of service while optimizing network speed.",
+		 "connections": [{"ip":"10.10.10.10","name":"AUSF"},{"ip":"","name":"NSSAAF"},{"ip":"","name":"NSSSF"},{"ip":"","name":"NEF"},{"ip":"","name":"SMF"},{"ip":"","name":"SCP"},{"ip":"","name":"NRF"},{"ip":"","name":"UDM"},{"ip":"","name":"AF"},{"ip":"","name:AMF"}]
+	    
+	    	},
+	    	{
+	    	"id":6,
 	    	"name":"UDM",
-	    	 "service_description":"",
-		 "connections": []
+	    	 "service_description":"The Unified Data Management function, which goes by the abbreviation UDM, is a crucial component of the 5G architecture and is in charge of securely handling and storing user- and network-related data. A unified view of the user's data and network services is provided by the UDM, which can be thought of as a centralized database of user information and network operations.",
+		 "connections": [{"ip":"10.10.10.10","name":"AUSF"},{"ip":"","name":"NSSAAF"},{"ip":"","name":"NSSSF"},{"ip":"","name":"NEF"},{"ip":"","name":"SMF"},{"ip":"","name":"SCP"},{"ip":"","name":"AMF"},{"ip":"","name":"AMF"},{"ip":"","name":"AF"},{"ip":"","name":"PCF"}]
 	    
 	    	},
 
 
 	    	 {
-	    	"id":6,
+	    	"id":7,
 	    	"name":"AUSF",
-	    	"service_description":"",
-		"connections": [{}]
+	    	"service_description":"The AUSF is in charge of confirming the legitimacy of 5G network users and granting access to restricted network resources. To authenticate the user's identity and create a secure connection, it communicates with other components of the 5G network, such as the user equipment (UE) and the Authentication and Key Agreement (AKA) server.",
+		 "connections": [{"ip":"10.10.10.10","name":"AMF"},{"ip":"","name":"NSSAAF"},{"ip":"","name":"NSSSF"},{"ip":"","name":"NEF"},{"ip":"","name":"SMF"},{"ip":"","name":"SCP"},{"ip":"","name":"NRF"},{"ip":"","name":"UDM"},{"ip":"","name":"AF"},{"ip":"","name":"PCF"}]
 	    
 	    	}, 
 	    	{
-	    	"id":7,
+	    	"id":8,
 	    	"name":"SMF",
-	    	"service_description":"",
-		 "connections": [{}]
+	    	"service_description":"SMF is in charge of controlling how communication sessions between user equipment (UE) and the network are started, changed, and ended. The SMF function, which is a component of the 5G core network, is closely related to the Access and Mobility Management Function (AMF) and the User Plane Function (UPF).",
+		 "connections": [{"ip":"10.10.10.10","name":"AUSF"},{"ip":"","name":"NSSAAF"},{"ip":"","name":"NSSSF"},{"ip":"","name":"NEF"},{"ip":"","name":"AMF"},{"ip":"","name":"SCP"},{"ip":"","name":"NRF"},{"ip":"","name":"UDM"},{"ip":"","name":"AF"},{"ip":"","name":"PCF"}]
 	    
 	    	},
 	    	   	{
-	    	"id":8,
-	    	"name":"SMF",
-	    	"service_description":"",
-		"connections": [{}]
+	    	"id":9,
+	    	"name":"NSAAF",
+	    	"service_description":"The NSAAF makes it possible to authorize network slice instances and acts as a lone point of entry for the creation, modification, and expiration of network slices. To provide a secure connection between the network slice and the user equipment (UE), it interacts with other network functions including the Policy Control Function (PCF) and the Network Slice Subnet Management Function (NSSMF).",
+		 "connections": [{"ip":"10.10.10.10","name":"AUSF"},{"ip":"","name":"AMF"},{"ip":"","name":"NSSSF"},{"ip":"","name":"NEF"},{"ip":"","name":"SMF"},{"ip":"","name":"SCP"},{"ip":"","name":"NRF"},{"ip":"","name":"UDM"},{"ip":"","name":"AF"},{"ip":"","name":"PCF"}]
+	    
+	    	},
+	    		    	   	{
+	    	"id":10,
+	    	"name":"AF",
+	    	"service_description":"The AF oversees the instantiation and execution of network applications, allowing interaction between user equipment (UE) and the 5G core network. To handle user data requests and make sure that network resources are allocated effectively, it communicates with other network functions including the Policy Control Function (PCF) and the Session Management Function (SMF).",
+		 "connections": [{"ip":"10.10.10.10","name":"AUSF"},{"ip":"","name":"AMF"},{"ip":"","name":"NSSSF"},{"ip":"","name":"NEF"},{"ip":"","name":"SMF"},{"ip":"","name":"SCP"},{"ip":"","name":"NRF"},{"ip":"","name":"UDM"},{"ip":"","name":"NSSAF"},{"ip":"","name":"PCF"}]
+	    
+	    	},
+	    		    		    	   	{
+	    	"id":11,
+	    	"name":"PCF",
+	    	"service_description":"PCF, or Policy Control Function, is in charge of controlling policy choices for network access and usage. Through the application of QoS, data use, and network security policies, the PCF function regulates the flow of data traffic between users' devices and the network.",
+		 "connections": [{"ip":"10.10.10.10","name":"AUSF"},{"ip":"","name":"AMF"},{"ip":"","name":"NSSSF"},{"ip":"","name":"NEF"},{"ip":"","name":"SMF"},{"ip":"","name":"SCP"},{"ip":"","name":"NRF"},{"ip":"","name":"UDM"},{"ip":"","name":"NSSAF"},{"ip":"","name":"AF"}]
 	    
 	    	},
 	   	{
-	    	"id":9,
+	    	"id":12,
 	    	"name":"UPF",
-	      	"service_description":"",
-		"connections": [{}]
+	      	"service_description":"UPF manages user data flow, directs it to its destination, and offers essential services including network security and quality of service (QoS). By ensuring that user data packets are delivered with the proper speed, reliability, and security, the UPF is in charge of managing data flow across the 5G network.",
+		"connections": [{"ip":"","name":"DN"},{"ip":"","name":"RAN"},{"ip":"","name":"SMF"}]
 	    	},
 	    	 	{
-	    	"id":10,
+	    	"id":13,
 	    	"name":"RAN",
-	    	"service_description":"",
-		 "connections": [{}]
+	    	"service_description":"The RAN is in charge of managing the radio interface between user equipment (UE) and the core network. It consists of the network's base stations, radio access points, and other parts that allow for wireless communication.",
+		 "connections": [{"ip":"","name":"UE"},{"ip":"","name":"AMF"}]
 	    
 	    	},
 	    	    	 	{
-	    	"id":11,
+	    	"id":14,
 	    	"name":"UE", 
-	    	"service_description":"",
-		 "connections": [{}]
+	    	"service_description":"UE, or User Equipment, is the acronym for the client device that connects to the 5G network. Smartphones, computers, IoT devices, and other gadgets that can connect to a 5G network are examples of UE in 5G.",
+		 "connections": [{"ip":"","name":"RAN"},{"ip":"","name":"AMF"}]
 	    
-	    	}]
+	    	},
+	    	    	 	{
+	    	"id":15,
+	    	"name":"DN", 
+	    	"service_description":"The data network (DN) is in charge of moving data across the network and connecting various network services such as the radio access network (RAN) and the core network. It offers dependable, fast, and low-latency connectivity to serve numerous 5G use cases, such as augmented reality, immersive gaming, and industrial automation.",
+		 "connections": [{"ip":"","name":"UPF"}]
+	    
+	    	}
+	    	]
 	    	
 	    	
 	} ],
 "attacks":[{
 	"attack_id":1,
-	"attack_description":"",
+	"attack_name":"Flooding of Posts",
+	"attack_description":"When a post method is recognized, 5Greplay firstly edits the stream id and then replicates it a huge number of times in order to saturate the bandwidth of the server.",
 	"attack_references":[],
 	"default_likelihood":2,
 	"default_impact":1,
@@ -98,7 +127,140 @@
 
 
 
-}],
+},
+	{	
+	"attack_id":2,
+	"attack_name":"Flooding of window update",
+	"attack_description":"Exploitation of the flow control mechanisms introduced by http2. In particular, it sends a number to indicate the maximum size of a frame that can be transmitted through the window_size_increment field. Each time that client sends window update, the server updates its window in order to receive more data, and it implies a resource consumption.",
+	"attack_references":[],
+	"default_likelihood":2,
+	"default_impact":1,
+
+	"linked_vulnerabilities":[],
+	"Linked_node":[]
+
+	},
+		{	
+	"attack_id":3,
+	"attack_name":"Flooding of window update",
+	"attack_description":"Exploitation of the flow control mechanisms introduced by http2. In particular, it sends a number to indicate the maximum size of a frame that can be transmitted through the window_size_increment field. Each time that client sends window update, the server updates its window in order to receive more data, and it implies a resource consumption.",
+	"attack_references":[],
+	"default_likelihood":2,
+	"default_impact":1,
+
+	"linked_vulnerabilities":[],
+	"Linked_node":[]
+
+	},
+	{	
+	"attack_id":4,
+	"attack_name":"Fuzzing path",
+	"attack_description":" Fuzzing is a technique used to change the real data with some random character, even ones not allowed for the protocol, and test the resilience of the serve. In this case path characters are changed in random way",
+	"attack_references":[],
+	"default_likelihood":2,
+	"default_impact":1,
+
+	"linked_vulnerabilities":[],
+	"Linked_node":[]
+
+	},
+	{	
+	"attack_id":5,
+	"attack_name":"Fuzzing  payload of Post requests",
+	"attack_description":" Fuzzing is a technique used to change the real data with some random character, even ones not allowed for the protocol, and test the resilience of the serve. In this case payload characters are changed in random way.",
+	"attack_references":[],
+	"default_likelihood":2,
+	"default_impact":1,
+
+	"linked_vulnerabilities":[],
+	"Linked_node":[]
+
+	},
+		{	
+	"attack_id":6,
+	"attack_name":"Settings attack",
+	"attack_description":"This attack  regards the exploitation of stream feature introduced by http2 in order to saturate the server. In particular, the field SETTINGS MAX CONCURRENT STREAMS is set to maximum value, after this many Get requests are sent on different stream ids, interleaved by window update frame in order to increase the reception window",
+	"attack_references":[],
+	"default_likelihood":2,
+	"default_impact":1,
+
+	"linked_vulnerabilities":[],
+	"Linked_node":[]
+
+	},
+			{	
+	"attack_id":7,
+	"attack_name":"Flooding of get requests",
+	"attack_description":"When a get method is recognized, 5Greplay firstly edits the stream id and then replicates it in order to saturate the bandwidth of the server.",
+	"attack_references":[],
+	"default_likelihood":2,
+	"default_impact":1,
+
+	"linked_vulnerabilities":[],
+	"Linked_node":[]
+
+	},
+				{	
+	"attack_id":8,
+	"attack_name":" Compression attack",
+	"attack_description":" This attack uses very large packets compressed, so when the server will decompress them, it will consume a big amount of resources.",
+	"attack_references":[],
+	"default_likelihood":2,
+	"default_impact":1,
+
+	"linked_vulnerabilities":[],
+	"Linked_node":[]
+
+	},
+					{	
+	"attack_id":9,
+	"attack_name":"Packet poisoning attack - NGAP packet altering",
+	"attack_description":"Within an UE authentication message exchange, we modify the SCTP protocol identifier in any NGAP authentication request from 60 to 0. In such way, we can evaluate the robustness of the AMF function against “malformed packets”.",
+	"attack_references":[],
+	"default_likelihood":2,
+	"default_impact":1,
+
+	"linked_vulnerabilities":[],
+	"Linked_node":["AMF"]
+
+	},
+	{	
+	"attack_id":10,
+	"attack_name":"NAS-5G SMC Replay attack",
+	"attack_description":"ENISA, in its threat landscape for 5G networks mentioned before, reported that AMFs are vulnerable to replay attacks of the NAS Security mode control (SMC) procedure messages. Moreover, the 3GPP TS33.512 specification for the  AMF Security Assurance proposes a test case to verify if an AMF is properly protected against NAS SMC replay attacks. The NAS SMC procedure is initiated by the AMF after a successful authentication of an UE in order to establish a security context that enables encrypted communication between the UE and the AMF. In addition, the AMF could send a NAS SMC message in an already existing security context to change the security algorithm in use. Before the establishment of the security context, the NAS messages are not encrypted. A malicious actor, with access to the NAS traffic in the interface N1, could intercept a NAS SMC (Security Mode command) clear message sent from the AMF to the UE, copy its NAS sequence number (NAS SQN), and use it to build a NAS SMC (Security Mode complete) message that is replayed to the AMF, or directly intercept a NAS SMC (Security Mode complete) message and replay it to the AMF. If the AMF does not implement a proper protection against this type of attack, the network will not drop the replayed packet. Furthermore, a malicious actor could use this technique to impersonate an UE and force the system to reduce the security level by using a weaker security algorithm or turning the security off and, thus, compromise the system.",
+	"attack_references":[],
+	"default_likelihood":2,
+	"default_impact":1,
+
+	"linked_vulnerabilities":[],
+	"Linked_node":["AMF"]
+
+	},
+	{	
+	"attack_id":11,
+	"attack_name":"NGAP flooding attack",
+	"attack_description":"We replay pre-captured traffic from UE to 5G core (AMF mainly) simulating a big number of UEs.",
+	"attack_references" :[],
+	"default_likelihood":2,
+	"default_impact":1,
+
+	"linked_vulnerabilities":[],
+	"Linked_node":["AMF"]
+
+	},
+		{	
+	"attack_id":11,
+	"attack_name":"NGAP flooding attack",
+	"attack_description":"We replay pre-captured traffic from UE to 5G core (AMF mainly) simulating a big number of UEs.",
+	"attack_references" :[],
+	"default_likelihood":2,
+	"default_impact":1,
+
+	"linked_vulnerabilities":[],
+	"Linked_node":["AMF"]
+
+	},
+],
 "remediation":[{
 	"id":1,
 	"short_description":"",
