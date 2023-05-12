@@ -1,1 +1,1 @@
- python kafka_script.py localhost 9092 topology
+ python kafka_script.py localhost 9092 info
