@@ -34,9 +34,9 @@
 	    	},
 	    	{
 	    	"id":5,
-	    	"name":"PCF",
+	    	"name":"PCF",	
 	    	"service_description":"The PCF is in charge of controlling and managing network policies, which govern how data is carried across the network. It is made to make sure that data traffic is managed to guarantee user-required security and quality of service while optimizing network speed.",
-		 "connections": [{"ip":"10.10.10.10","name":"AUSF"},{"ip":"","name":"NSSAAF"},{"ip":"","name":"NSSSF"},{"ip":"","name":"NEF"},{"ip":"","name":"SMF"},{"ip":"","name":"SCP"},{"ip":"","name":"NRF"},{"ip":"","name":"UDM"},{"ip":"","name":"AF"},{"ip":"","name:AMF"}]
+		 "connections": [{"ip":"10.10.10.10","name":"AUSF"},{"ip":"","name":"NSSAAF"},{"ip":"","name":"NSSSF"},{"ip":"","name":"NEF"},{"ip":"","name":"SMF"},{"ip":"","name":"SCP"},{"ip":"","name":"NRF"},{"ip":"","name":"UDM"},{"ip":"","name":"AF"},{"ip":"","name":"AMF"}]
 	    
 	    	},
 	    	{
@@ -46,9 +46,7 @@
 		 "connections": [{"ip":"10.10.10.10","name":"AUSF"},{"ip":"","name":"NSSAAF"},{"ip":"","name":"NSSSF"},{"ip":"","name":"NEF"},{"ip":"","name":"SMF"},{"ip":"","name":"SCP"},{"ip":"","name":"AMF"},{"ip":"","name":"AMF"},{"ip":"","name":"AF"},{"ip":"","name":"PCF"}]
 	    
 	    	},
-
-
-	    	 {
+	    	{
 	    	"id":7,
 	    	"name":"AUSF",
 	    	"service_description":"The AUSF is in charge of confirming the legitimacy of 5G network users and granting access to restricted network resources. To authenticate the user's identity and create a secure connection, it communicates with other components of the 5G network, such as the user equipment (UE) and the Authentication and Key Agreement (AKA) server.",
@@ -62,21 +60,21 @@
 		 "connections": [{"ip":"10.10.10.10","name":"AUSF"},{"ip":"","name":"NSSAAF"},{"ip":"","name":"NSSSF"},{"ip":"","name":"NEF"},{"ip":"","name":"AMF"},{"ip":"","name":"SCP"},{"ip":"","name":"NRF"},{"ip":"","name":"UDM"},{"ip":"","name":"AF"},{"ip":"","name":"PCF"}]
 	    
 	    	},
-	    	   	{
+	    	{
 	    	"id":9,
 	    	"name":"NSAAF",
 	    	"service_description":"The NSAAF makes it possible to authorize network slice instances and acts as a lone point of entry for the creation, modification, and expiration of network slices. To provide a secure connection between the network slice and the user equipment (UE), it interacts with other network functions including the Policy Control Function (PCF) and the Network Slice Subnet Management Function (NSSMF).",
 		 "connections": [{"ip":"10.10.10.10","name":"AUSF"},{"ip":"","name":"AMF"},{"ip":"","name":"NSSSF"},{"ip":"","name":"NEF"},{"ip":"","name":"SMF"},{"ip":"","name":"SCP"},{"ip":"","name":"NRF"},{"ip":"","name":"UDM"},{"ip":"","name":"AF"},{"ip":"","name":"PCF"}]
 	    
 	    	},
-	    		    	   	{
+	   	{
 	    	"id":10,
 	    	"name":"AF",
 	    	"service_description":"The AF oversees the instantiation and execution of network applications, allowing interaction between user equipment (UE) and the 5G core network. To handle user data requests and make sure that network resources are allocated effectively, it communicates with other network functions including the Policy Control Function (PCF) and the Session Management Function (SMF).",
 		 "connections": [{"ip":"10.10.10.10","name":"AUSF"},{"ip":"","name":"AMF"},{"ip":"","name":"NSSSF"},{"ip":"","name":"NEF"},{"ip":"","name":"SMF"},{"ip":"","name":"SCP"},{"ip":"","name":"NRF"},{"ip":"","name":"UDM"},{"ip":"","name":"NSSAF"},{"ip":"","name":"PCF"}]
 	    
 	    	},
-	    		    		    	   	{
+	   	{
 	    	"id":11,
 	    	"name":"PCF",
 	    	"service_description":"PCF, or Policy Control Function, is in charge of controlling policy choices for network access and usage. Through the application of QoS, data use, and network security policies, the PCF function regulates the flow of data traffic between users' devices and the network.",
@@ -96,23 +94,20 @@
 		 "connections": [{"ip":"","name":"UE"},{"ip":"","name":"AMF"}]
 	    
 	    	},
-	    	    	 	{
+	    	{
 	    	"id":14,
 	    	"name":"UE", 
 	    	"service_description":"UE, or User Equipment, is the acronym for the client device that connects to the 5G network. Smartphones, computers, IoT devices, and other gadgets that can connect to a 5G network are examples of UE in 5G.",
 		 "connections": [{"ip":"","name":"RAN"},{"ip":"","name":"AMF"}]
 	    
 	    	},
-	    	    	 	{
+	    	 {
 	    	"id":15,
 	    	"name":"DN", 
 	    	"service_description":"The data network (DN) is in charge of moving data across the network and connecting various network services such as the radio access network (RAN) and the core network. It offers dependable, fast, and low-latency connectivity to serve numerous 5G use cases, such as augmented reality, immersive gaming, and industrial automation.",
 		 "connections": [{"ip":"","name":"UPF"}]
 	    
-	    	}
-	    	]
-	    	
-	    	
+	    	} ]
 	} ],
 "attacks":[{
 	"attack_id":1,
@@ -121,9 +116,8 @@
 	"attack_references":[],
 	"default_likelihood":2,
 	"default_impact":1,
-
 	"linked_vulnerabilities":[],
-	"Linked_node":[]
+	"Linked_node":["AMF", "SMF", "UPF"]
 
 
 
@@ -135,21 +129,19 @@
 	"attack_references":[],
 	"default_likelihood":2,
 	"default_impact":1,
-
 	"linked_vulnerabilities":[],
-	"Linked_node":[]
+	"Linked_node":["AMF", "SMF", "UPF"]
 
 	},
-		{	
+	{	
 	"attack_id":3,
 	"attack_name":"Flooding of window update",
 	"attack_description":"Exploitation of the flow control mechanisms introduced by http2. In particular, it sends a number to indicate the maximum size of a frame that can be transmitted through the window_size_increment field. Each time that client sends window update, the server updates its window in order to receive more data, and it implies a resource consumption.",
 	"attack_references":[],
 	"default_likelihood":2,
 	"default_impact":1,
-
 	"linked_vulnerabilities":[],
-	"Linked_node":[]
+	"Linked_node":["AMF", "SMF", "UPF"]
 
 	},
 	{	
@@ -159,9 +151,8 @@
 	"attack_references":[],
 	"default_likelihood":2,
 	"default_impact":1,
-
 	"linked_vulnerabilities":[],
-	"Linked_node":[]
+	"Linked_node":["AMF", "SMF", "UPF"]
 
 	},
 	{	
@@ -171,55 +162,50 @@
 	"attack_references":[],
 	"default_likelihood":2,
 	"default_impact":1,
-
 	"linked_vulnerabilities":[],
-	"Linked_node":[]
+	"Linked_node":["AMF", "SMF", "UPF"]
 
 	},
-		{	
+	{	
 	"attack_id":6,
 	"attack_name":"Settings attack",
 	"attack_description":"This attack  regards the exploitation of stream feature introduced by http2 in order to saturate the server. In particular, the field SETTINGS MAX CONCURRENT STREAMS is set to maximum value, after this many Get requests are sent on different stream ids, interleaved by window update frame in order to increase the reception window",
 	"attack_references":[],
 	"default_likelihood":2,
 	"default_impact":1,
-
 	"linked_vulnerabilities":[],
-	"Linked_node":[]
+	"Linked_node":["AMF", "SMF", "UPF"]
 
 	},
-			{	
+	{	
 	"attack_id":7,
 	"attack_name":"Flooding of get requests",
 	"attack_description":"When a get method is recognized, 5Greplay firstly edits the stream id and then replicates it in order to saturate the bandwidth of the server.",
 	"attack_references":[],
 	"default_likelihood":2,
 	"default_impact":1,
-
 	"linked_vulnerabilities":[],
-	"Linked_node":[]
+	"Linked_node":["AMF", "SMF", "UPF"]
 
 	},
-				{	
+	{	
 	"attack_id":8,
 	"attack_name":" Compression attack",
 	"attack_description":" This attack uses very large packets compressed, so when the server will decompress them, it will consume a big amount of resources.",
 	"attack_references":[],
 	"default_likelihood":2,
 	"default_impact":1,
-
-	"linked_vulnerabilities":[],
+	"linked_vulnerabilities":["AMF", "SMF", "UPF"],
 	"Linked_node":[]
 
 	},
-					{	
+	{	
 	"attack_id":9,
 	"attack_name":"Packet poisoning attack - NGAP packet altering",
 	"attack_description":"Within an UE authentication message exchange, we modify the SCTP protocol identifier in any NGAP authentication request from 60 to 0. In such way, we can evaluate the robustness of the AMF function against “malformed packets”.",
 	"attack_references":[],
 	"default_likelihood":2,
 	"default_impact":1,
-
 	"linked_vulnerabilities":[],
 	"Linked_node":["AMF"]
 
@@ -231,7 +217,6 @@
 	"attack_references":[],
 	"default_likelihood":2,
 	"default_impact":1,
-
 	"linked_vulnerabilities":[],
 	"Linked_node":["AMF"]
 
@@ -243,7 +228,6 @@
 	"attack_references" :[],
 	"default_likelihood":2,
 	"default_impact":1,
-
 	"linked_vulnerabilities":[],
 	"Linked_node":["AMF"]
 
@@ -255,20 +239,17 @@
 	"attack_references" :[],
 	"default_likelihood":2,
 	"default_impact":1,
-
 	"linked_vulnerabilities":[],
 	"Linked_node":["AMF"]
 
-	},
-],
+	}],
+	
 "remediation":[{
 	"id":1,
 	"short_description":"",
 	"description":[],
 	"Monetary_cost":2,
 	
-
-	"node_ids":[],
 	"Linked_node":[]
 
 }],
