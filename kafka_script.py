@@ -7,7 +7,7 @@ import time
 
 #import pdb; pdb.set_trace()
 def read_json(namefile):
-	f = open("json/"+namefile+".json")
+	f = open("../json/"+namefile+".json")
 	
 	data=json.load(f)
 	
@@ -35,17 +35,19 @@ def main():
 		ip = input("Enter value for ip ")
 		port = input("Enter value for port number")
 		namefile=input("Enter value for port number")
+		topic_name= intput("Enter value for topic_name")
 	else:
 		# Retrieve arguments from the command line
 		ip = sys.argv[1]
 		port = sys.argv[2]
 		namefile= sys.argv[3]
+		topic_name= sys.argv[4]
 
 
 	# Define the Kafka broker URL and port
 	bootstrap_servers = [ip+":"+port]
 	# Define the Kafka topic name
-	topic_name = 'testTopic'
+	#topic_name = 'testTopic'
 	admin_client = KafkaAdminClient(bootstrap_servers=bootstrap_servers)
 
 
