@@ -39,3 +39,5 @@ The **attacks** field refer to the exploit developed in Sancus project. Each att
 The **remediations** field indicate the strategies to mitigates vulnerabilities/threat discovered in previous stages. Each remediation if made up of an id, a short description, a description, a monetary cost.
 
 The **vulnerabilitied** field indicate all the weaknesses/ flaws in 5G Nokia servers. Each vulnerability has an id, a description, a reference, a likelihood, an integer indicating the impact on the service, and the list of the nodes involved.
+
+The directory that holds the JSON file must be located **one level above the script’s directory.**
