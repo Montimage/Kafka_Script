@@ -7,7 +7,7 @@
 
 
 
-This script takes three arguments as input: 
+This script takes four arguments as input: 
 
 ~~~
           1. Ip of KafkaBus
