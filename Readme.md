@@ -40,4 +40,4 @@ The **remediations** field indicate the strategies to mitigates vulnerabilities/
 
 The **vulnerabilitied** field indicate all the weaknesses/ flaws in 5G Nokia servers. Each vulnerability has an id, a description, a reference, a likelihood, an integer indicating the impact on the service, and the list of the nodes involved.
 
-The directory that holds the JSON file must be located **one level above the script’s directory.**
+The directory that holds the JSON file MUST be located **one level above the script’s directory and be named as "json"**
